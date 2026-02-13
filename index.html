@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div id="header">
+		<h1 id="title_top">Area Calculator</h1>
+	</div>
+	<div class="container1">
+		<h2>Area of Trianlge using Heron's Formula</h2>
+		<div class="content_box">
+			a = <input type="text" id="a"></br>
+			b = <input type="text" id="b"></br>
+			c = <input type="text" id="c"></br>
+			<p>
+			Area = <span id="area">0.0000</span> square feet</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="shotok">0.0000</span> shotok</br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="katha">0.0000</span> katha
+			</p>
+			<button onclick="calculateArea()">Calculate</button>
+		</div>
+		<div class="img_box">
+			<img src="images/triangle.svg">
+		</div>
+	</div>
+<script>
+	function calculateArea(){
+		var a=getInputValue('a');
+		var b=getInputValue('b');
+		var c=getInputValue('c');
+		if(isNaN(a) || isNaN(b) || isNaN(c)){
+      alert('Please Enter Valid Values for a,b,c');
+      return;
+    }
+    var s=(a+b+c)/2;
+    var area_squared=s*(s-a)*(s-b)*(s-c);
+    if (area_squared<0){alert('Trianlge is Unreal');}
+    var area=Math.sqrt(area_squared);
+    var shotok=area/435.6;
+    var katha=area/720;
+    setElementText('area',area.toFixed(4));
+    setElementText('shotok',shotok.toFixed(4));
+    setElementText('katha',katha.toFixed(4));
+	}
+	function getInputValue(fieldId) {
+    const inputField = document.getElementById(fieldId);
+    const inputValueText = inputField.value;
+    const value = parseFloat(inputValueText);
+    return value;
+}
+function setElementText(elementId, text0) {
+    const element = document.getElementById(elementId);
+    element.innerText = text0;
+}
+</script>
+</body>
+</html>
