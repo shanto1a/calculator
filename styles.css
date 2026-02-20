@@ -20,6 +20,7 @@ body{
 	padding:10px;
 	margin:auto;
 	box-shadow: 2px 2px 15px grey;
+	margin-bottom: 10px;
 }
 h2,h1{
 	text-align: center;
@@ -41,7 +42,10 @@ h2,h1{
 	height: auto;
 	float:left;
 	margin-left:20px;
-	//border:1px solid red;
+	border:1px solid red;
+}
+img{
+  width:100%;
 }
 button{
 	padding:10px;

@@ -14,9 +14,9 @@
 	<div class="container1">
 		<h2>Area of Trianlge using Heron's Formula</h2>
 		<div class="content_box">
-			a = <input type="text" id="a"></br>
-			b = <input type="text" id="b"></br>
-			c = <input type="text" id="c"></br>
+			a = <input type="text" id="a_heron"></br>
+			b = <input type="text" id="b_heron"></br>
+			c = <input type="text" id="c_heron"></br>
 			<p>
 			Area = <span id="area">0.0000</span> square feet</br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="shotok">0.0000</span> shotok</br>
@@ -28,11 +28,22 @@
 			<img src="images/triangle.svg">
 		</div>
 	</div>
+	<div class="container1">
+	  <h2>Finding Angle using Cosine Rule</h2>
+	  <div class="content_box">
+	    a = <input type="text" id="a_cosine"></br>
+			b = <input type="text" id="b_cosine"></br>
+			c = <input type="text" id="c_cosine"></br>
+	  </div>
+	  <div class="img_box">
+			<img src="images/angle.svg">
+		</div>
+	</div>
 <script>
 	function calculateArea(){
-		var a=getInputValue('a');
-		var b=getInputValue('b');
-		var c=getInputValue('c');
+		var a=getInputValue('a_heron');
+		var b=getInputValue('b_heron');
+		var c=getInputValue('c_heron');
 		if(isNaN(a) || isNaN(b) || isNaN(c)){
       alert('Please Enter Valid Values for a,b,c');
       return;
@@ -47,16 +58,17 @@
     setElementText('shotok',shotok.toFixed(4));
     setElementText('katha',katha.toFixed(4));
 	}
-	function getInputValue(fieldId) {
+  function getInputValue(fieldId) {
     const inputField = document.getElementById(fieldId);
     const inputValueText = inputField.value;
     const value = parseFloat(inputValueText);
     return value;
-}
-function setElementText(elementId, text0) {
+  }
+  function setElementText(elementId, text0) {
     const element = document.getElementById(elementId);
     element.innerText = text0;
-}
+  }
+  
 </script>
 </body>
 </html>
