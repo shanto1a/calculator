@@ -42,7 +42,7 @@ h2,h1{
 	height: auto;
 	float:left;
 	margin-left:20px;
-	border:1px solid red;
+	//border:1px solid red;
 }
 img{
   width:100%;
