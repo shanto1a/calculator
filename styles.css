@@ -16,7 +16,7 @@ body{
 .container1{
 	background-color: #fef1f3;
 	max-width: 50cm;
-	min-height: 10cm;
+	min-height: 11cm;
 	padding:10px;
 	margin:auto;
 	box-shadow: 2px 2px 15px grey;
@@ -30,7 +30,7 @@ h2,h1{
 .content_box{
 	width:60%;
 	font-size:1.4em;
-	min-height: 8cm;
+	min-height: 10cm;
 	padding:15px;
 	float:left;
   //border:1px solid red;
@@ -38,14 +38,16 @@ h2,h1{
 .img_box{
   align-content: center;
 	width:9cm;
-	max-width: 30%;
-	height: auto;
+	height: 9cm;
+	max-width:35%;
 	float:left;
 	margin-left:20px;
 	//border:1px solid red;
 }
 img{
-  width:100%;
+  height:9cm;
+  width:9cm;
+  max-width:90%;
 }
 button{
 	padding:10px;
