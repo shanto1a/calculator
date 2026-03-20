@@ -1,69 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Area Calculator</title>
+    <title>My Responsive Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-	<div id="header">
-		<h1 id="title_top">Area Calculator</h1>
-	</div>
-	<div class="container1">
-		<h2>Area of Trianlge using Heron's Formula</h2>
-		<div class="content_box">
-			a = <input type="text" id="a"><br>
-			b = <input type="text" id="b"><br>
-			c = <input type="text" id="c"><br>
-			<p>
-			Area = <span id="area">0.0000</span> square feet</br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="shotok">0.0000</span> shotok</br>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span id="katha">0.0000</span> katha
-			</p>
-			<button onclick="calculateArea()">Calculate</button>
-		</div>
-		<div class="img_box">
-			<img src="images/triangle.svg">
-		</div>
-	</div>
-	<div class="container1">
-	  <h2>Finding Angle using Cosine Rule</h2>
-	  <div class="content_box">
-	    <p>
-	      a = <input type="text" id="a2"><br>
-		  	b = <input type="text" id="b2"><br>
-		  	c = <input type="text" id="c2">
-			</p>
-			<p>
-		  	Angle A = <span id="angle">0.000</span> degrees<br>
-			</p>
-			<button onclick="calculateAngle()">Calculate</button>
-	  </div>
-	  <div class="img_box">
-			<img src="images/angle.svg">
-		</div>
-	</div>
-	<div class="container1">
-	  <h2>Finding the base of a fixed angled triangle</h2>
-	  <div class="content_box">
-	    <p>
-	      a = <input type="text" id="a3"><br>
-	      Angle C = <input type="text" id="angle3" style="width:57%"><br>
-		  	area = <input type="text" style="width:65%" id="area3">
-			</p>
-			<p>
-		  	Base b = <span id="b3">0.000</span> feet<br>
-			</p>
-			<button onclick="calculateBase()">calculate</button>
-	  </div>
-	  <div class="img_box">
-	    <img src="images/line_chasing.svg">
-	  </div>
-	</div>
-<script href=>
-	function calculateArea(){
+
+
+
+
+
+    <div id="header">
+        <h1 id="page_title">Area Calculator</h1>
+    </div>
+
+    <div class="content_box">
+        <h2 class="content_title">Heron's Formula</h2>
+        
+        <div class="main_layout">
+            <div class="text_box">
+                <div class="input_group">
+                    <label for="a">a =</label>
+                    <input type="text" id="a" >
+                </div>
+                <div class="input_group">
+                    <label for="b">b =</label>
+                    <input type="text" id="b" >
+                </div>
+                <div class="input_group">
+                    <label for="c">c =</label>
+                    <input type="text" id="c" >
+                </div>
+
+                <button onclick="calculateArea()" class="action_btn">Calculate</button>
+
+                <div class="results">
+                    <p>Area = <span id="area">0.0000</span></p>
+                    <p>in shotok = <span id="shotok">0.0000</span></p>
+                    <p>in katha = <span id="katha">0.0000</span></p>
+                </div>
+            </div>
+
+            <div class="img_box">
+                <img src="images/triangle.svg" alt="triangle" class="responsive_img">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<div class="content_box">
+        <h2 class="content_title">Finding Angle using Cosine Rule</h2>
+        
+        <div class="main_layout">
+            <div class="text_box">
+                <div class="input_group">
+                    <label for="a2">a =</label>
+                    <input type="text" id="a2" >
+                </div>
+                <div class="input_group">
+                    <label for="b2">b =</label>
+                    <input type="text" id="b2" >
+                </div>
+                <div class="input_group">
+                    <label for="c2">c =</label>
+                    <input type="text" id="c2" >
+                </div>
+
+                <button onclick="calculateAngle()" class="action_btn">Calculate</button>
+
+                <div class="results">
+                    <p>Angle = <span id="angle">0.0000</span></p>
+                    
+                </div>
+            </div>
+
+            <div class="img_box">
+                <img src="images/angle.svg" alt="triangle" class="responsive_img">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+<div class="content_box">
+        <h2 class="content_title">Finding side 'b' of a triangle</h2>
+        
+        <div class="main_layout">
+            <div class="text_box">
+                <div class="input_group">
+                    <label for="a3">a =</label>
+                    <input type="text" id="a3" >
+                </div>
+                <div class="input_group">
+                    <label for="angle3">angle C =</label>
+                    <input type="text" id="angle3" >
+                </div>
+                <div class="input_group">
+                    <label for="area3">area =</label>
+                    <input type="text" id="area3" >
+                </div>
+
+                <button onclick="calculateBase()" class="action_btn">Calculate</button>
+
+                <div class="results">
+                    <p>side b = <span id="b3">0.0000</span></p>                 
+                </div>
+            </div>
+
+            <div class="img_box">
+                <img src="images/line_chasing.svg" alt="triangle" class="responsive_img">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        function calculateArea(){
 		var a=getInputValue('a');
 		var b=getInputValue('b');
 		var c=getInputValue('c');
@@ -81,7 +149,10 @@
     setElementText('shotok',shotok.toFixed(4));
     setElementText('katha',katha.toFixed(4));
 	}
-	function calculateAngle(){
+
+
+
+    function calculateAngle(){
 	  var a=getInputValue('a2');
 		var b=getInputValue('b2');
 		var c=getInputValue('c2');
@@ -92,7 +163,10 @@
     var angle = Math.acos((a*a+b*b-c*c)/(2*a*b))/Math.PI*180;
     setElementText('angle',angle.toFixed(4))
 	}
-	function calculateBase(){
+
+
+
+    function calculateBase(){
 	  var a=getInputValue('a3');
 		var area=getInputValue('area3');
 		var C=getInputValue('angle3');
@@ -103,17 +177,23 @@
     var b=2*area/(a*Math.sin(C*Math.PI/180));
     setElementText('b3',b.toFixed(4));
 	}
+
+
   function getInputValue(fieldId) {
     const inputField = document.getElementById(fieldId);
     const inputValueText = inputField.value;
     const value = parseFloat(inputValueText);
     return value;
   }
+
+
   function setElementText(elementId, text0) {
     const element = document.getElementById(elementId);
     element.innerText = text0;
   }
-  
-</script>
+
+
+
+    </script>
 </body>
 </html>
